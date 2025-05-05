@@ -1,0 +1,74 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 26% 14%;
+    --foreground: 0 0% 98%;
+
+    --card: 220 26% 14%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 220 26% 14%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 45 55% 52%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 215 32% 17%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215 16% 70%;
+
+    --accent: 45 55% 52%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 214.3 31.8% 30%;
+    --input: 214.3 31.8% 30%;
+    --ring: 45 55% 52%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+.hero-overlay {
+  background: linear-gradient(to bottom, rgba(18, 26, 43, 0.3) 0%, rgba(18, 26, 43, 0.9) 100%);
+}
+
+.section-padding {
+  @apply py-16 md:py-24;
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
